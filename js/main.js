@@ -8,12 +8,10 @@ $(document).ready(function() {
         let amount = parseFloat($('#transaction-amount').val());
         let errorMessage = '';
 
-        if (!amount || isNaN(amount)) {
-            errorMessage = 'Please enter a valid amount.';
-        }
-
-        if (errorMessage) {
+        if (isNaN(amount) || amount <= 0) {
+            errorMessage = 'Please enter a valid amount greater than 0.';
             $('#error-message').text(errorMessage);
+            return;
         }
 
         $('#error-message').text(''); 
@@ -39,7 +37,7 @@ $(document).ready(function() {
 
     $('#transaction-list').on('click', '.delete-button', function() {
         let $item = $(this).closest('li');
-        let amount = parseFloat($item.find('span').text().match(/[-\d.]+/));
+        let amount = parseFloat($item.find('span').text().match(/[-\d.]+/)[0]);
         balance -= amount;
         $('#balance-amount').text(balance.toFixed(2));
         
