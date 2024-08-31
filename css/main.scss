@@ -79,7 +79,8 @@ header h1 {
     flex-direction: column;
 
     select,
-    input[type="number"] {
+    input[type="number"],
+    input[type="text"] {
       margin-bottom: 20px;
       padding: 10px;
       border: 2px solid $primary-color;
@@ -143,12 +144,12 @@ header h1 {
   }
 }
 
+
 #error-message {
-    color: #e74c3c;
-    font-size: 14px;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
-
-
 .transaction-list {
   ul {
     list-style-type: none;
@@ -197,19 +198,15 @@ header h1 {
 }
 
 footer {
-  font-size: 14px;
-  color: $text-color;
-  margin-top: 20px;
   text-align: center;
+  margin-top: 20px;
 
   a {
     color: $primary-color;
     text-decoration: none;
-    font-weight: bold;
-    transition: color $transition-speed ease;
 
     &:hover {
-      color: darken($primary-color, 15%);
+      text-decoration: underline;
     }
   }
 }

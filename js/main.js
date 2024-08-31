@@ -6,6 +6,7 @@ $(document).ready(function() {
 
         let type = $('#transaction-type').val();
         let amount = parseFloat($('#transaction-amount').val());
+        let description = $('#transaction-description').val();
         let errorMessage = '';
 
         if (isNaN(amount) || amount <= 0) {
@@ -25,7 +26,7 @@ $(document).ready(function() {
 
         let transactionHtml = `
             <li class="d-flex justify-content-between align-items-center show">
-                <span><strong>${type === 'income' ? 'Income' : 'Expense'}</strong>: ${amount.toFixed(2)}</span>
+                <span><strong>${type === 'income' ? 'Income' : 'Expense'}</strong>: ${amount.toFixed(2)} - ${description}</span>
                 <button class="btn btn-danger btn-sm delete-button"><i class="fas fa-trash"></i></button>
             </li>
         `;
@@ -71,7 +72,7 @@ $(document).ready(function() {
 
                 let transactionHtml = `
                     <li class="d-flex justify-content-between align-items-center show">
-                        <span><strong>${amount >= 0 ? 'Income' : 'Expense'}</strong>: ${Math.abs(amount).toFixed(2)}</span>
+                        <span><strong>${amount >= 0 ? 'Income' : 'Expense'}</strong>: ${Math.abs(amount).toFixed(2)} - ${transaction.text}</span>
                         <button class="btn btn-danger btn-sm delete-button"><i class="fas fa-trash"></i></button>
                     </li>
                 `;
