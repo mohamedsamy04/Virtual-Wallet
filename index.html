@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Wallet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Virtual Wallet</h1>
+        </header>
+        <section class="balance text-center mb-4 p-4 rounded">
+            <h2>Balance</h2>
+            <p id="balance-amount">0.00</p>
+        </section>
+        <section class="transaction-form">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form">
+                <div class="input-group">
+                    <select id="transaction-type" class="form-select" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <input type="number" id="transaction-amount" placeholder="Amount">
+                    <small id="error-message" class="text-danger"></small>
+                    
+                    <button type="submit" id="add-transaction-btn"><i class="fas fa-plus"></i></button>
+                </div>
+            </form>
+        </section>
+        <section class="transaction-list">
+            <h2>Transaction List</h2>
+            <ul id="transaction-list"></ul>
+        </section>
+    </div>
+    <footer>
+        Made by <a href="https://www.facebook.com/profile.php?id=100029070002125&mibextid=LQQJ4d">Mohamed Samy</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
